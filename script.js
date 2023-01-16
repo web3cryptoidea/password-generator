@@ -88,8 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
  
-
-// Function for prompting User to choose password options
+// Function for prompting User to choose password options and generate password
 
 function getPasswordOptions() {
   while (true) {
@@ -125,36 +124,28 @@ function getPasswordOptions() {
   if (special) types.push("special characters");
   alert("Your password will consist of: " + types.join(", "));
 
-  let password = "";
-  let possibleCharacters = "";
-  if (lowerCased == true) {
-    possibleCharacters += lowerCasedCharacters.join('');
+  // Creates an array of chosen types and randomly picks the symbols, their number equals the one chosen by the User
+
+  let password = [];
+  let possibleCharacters = [];
+  if (lowerCased) {
+    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
   }
-  if (upperCased == true) {
-    possibleCharacters += upperCasedCharacters.join('');
+  if (upperCased) {
+    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
   }
-  if (numeric == true) {
-    possibleCharacters += numericCharacters.join('');
+  if (numeric) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
   }
-  if (special == true) {
-    possibleCharacters += specialCharacters.join('');
+  if (special) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
   }
 
   for (let i = 0; i < num; i++) {
-    password += possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
+    password += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
   }
   return password;
 };
-
- 
-// Function for getting a random element from an array
-
-function getRandom(arr) {
-
-}
-
-// Function to generate password with user input
- 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
