@@ -108,7 +108,7 @@ function getPasswordOptions() {
   let special = confirm("Do you want special Characters in your password? If yes, choose OK, if not choose CANCEL.");
 
   while (true) {
-    if (lowerCasedCharacters || upperCasedCharacters || numericCharacters || specialCharacters) {
+    if (lowerCased || upperCased || numeric || special) {
       break;
     }
     else {

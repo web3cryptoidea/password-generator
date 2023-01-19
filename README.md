@@ -15,7 +15,7 @@ N/A
 
 ## Usage 
 This webpage is deployed  at live URL, you can access it using: https://web3cryptoidea.github.io/password-generator/
- 
+It looks like this [Screenshot](./Screenshot.png).
  
 ## Credits
 
